@@ -1,0 +1,460 @@
+\documentclass[12pt,a4paper]{book}
+
+% --------------------------------- 페이지 스타일 지정
+	\usepackage{geometry}
+	\geometry{hmargin={1.4in,1.4in}}
+	\setlength{\topmargin}{00pt} 	%
+	\setlength{\headsep}{45pt} 	%
+
+
+		\usepackage[hangul]{kotex}				% 한글 사용
+		\usepackage[unicode]{hyperref}			% 한굴 하이퍼링크 사용
+		\usepackage{amssymb,amsfonts,amsmath}% 수학 수식 사용
+		
+		\usepackage{enumerate}			%
+		\usepackage{enumitem}			%
+		\usepackage{pifont}				%
+		\usepackage{setspace}			%
+		\usepackage{booktabs}			% table
+		\usepackage{color}				%
+		\usepackage{multirow}			%
+		\usepackage{boxedminipage}		% 미니 페이지
+		\usepackage[pdftex]{graphicx}	% 그림 사용
+		\usepackage[final]{pdfpages}	%pdf 사용
+		\usepackage{framed}			%pdf 사용
+		
+		\usepackage{fix-cm}	
+		\usepackage[english]{babel}
+
+		\usepackage{tikz}%
+		\usetikzlibrary{arrows,positioning,shapes}
+		%\usetikzlibrary{positioning}
+
+
+% ----------------------------- 장의 목차
+\usepackage{minitoc}
+	\setcounter{minitocdepth}{1}    	% Show until subsubsections in minitoc
+	\setlength{\mtcindent}{12pt} 	% default 24pt
+
+% --------------------------------- 페이지 스타일 지정
+
+	\usepackage[Bjornstrup]{fncychap}
+
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\fancyhead{} % clear all fields
+	\fancyhead[LO]{\small \leftmark}
+	\fancyhead[RE]{\small \leftmark}
+	\fancyfoot{} % clear all fields
+	\fancyfoot[LE,RO]{\large \thepage}
+	%\fancyfoot[CO,CE]{\empty}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+
+% --------------------------------- recoment
+
+	\newcommand{\red}{\color{red}}			% 글자 색깔 지정
+	\newcommand{\blue}{\color{blue}}		% 글자 색깔 지정
+	\newcommand{\black}{\color{black}}		% 글자 색깔 지정
+	\newcommand{\superscript}[1]{${}^{#1}$}
+	
+	
+% --------------------------------- 문서 기본 사항 설정
+
+		\setcounter{secnumdepth}{1} % 문단 번호 깊이
+		\setcounter{tocdepth}{1} % 문단 번호 깊이
+		\setlength{\parindent}{0cm} % 문서 들여 쓰기를 하지 않는다.
+		\doublespace
+	
+% --------------------------------- 환경 정의 : 박스 치고 안의 글자 빨간색
+
+			\newenvironment{BoxRedText}
+			{ 	\setlength{\fboxsep}{12pt}
+				\begin{boxedminipage}[c]{1.0\linewidth}
+				\color{red}
+			}
+			{ 	\end{boxedminipage} 
+				\color{black}
+			}
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+			\dominitoc
+
+			\title{typing}
+			\author{김대희}
+			\date{2015년 1월}
+			\maketitle
+
+
+			\tableofcontents
+			\listoffigures
+			\listoftables
+
+			
+
+
+% ■■■■■■■■■■■■■■■■■ part ■■■■■■■■■■■■■■■
+\newpage
+\part{ }
+
+% ========================================== chapter ============
+\newpage
+\chapter{ }
+
+% ------------------------------------------ section ------------ 
+\newpage  \null
+\section{LCC 개요}
+
+
+	% -------------------------------------- page -------------------
+		%			\nomtcrule         		% removes rules = horizontal lines
+		%			\nomtcpagenumbers  % remove page numbers from minitocs
+		\newpage
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+
+
+
+		\newpage   \null
+	% -------------------------------------- page -------------------
+		\subsection{중점 품질 관리대상}
+
+
+		\newpage
+	% -------------------------------------- page -------------------
+	\newpage
+	\paragraph{\large }
+
+
+		% ----------------------------- itemize
+			\begin{itemize}[itemsep=0.0em]
+			\item	
+			\item	
+			\end{itemize}
+
+
+			[itemsep=-0.5em]
+			[topsep=-1.0em,			]
+			
+		% ----------------------------- enumerate
+		\begin{enumerate}[itemsep=-0.5em]
+		\item	
+		\item	
+		\end{enumerate}
+
+	% ----------------------------- boxed mini page
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\end{boxedminipage}
+		
+		\begin{framed}
+		1
+		\end{framed}
+		
+		\begin{quote}
+		“         ”
+		\end{quote}
+		\begin{verbatim}
+		\end{verbatim}
+
+		
+		\rule{\linewidth}{1pt}
+		
+	% ----------------------------- 수식
+		\begin{eqnarray}
+		\end{eqnarray}
+		
+		\begin{equation}
+		\end{equation}
+
+	% ----------------------------- table
+		\begin{table}[hbp]
+		\caption{표 3.8 기능평가표 작성의 사례}
+		\centering 
+		\begin{tabular}{ p{0.2\textwidth} p{0.2\textwidth} p{7cm} }
+		\toprule
+		\multirow{3}{*}{항목}\\	
+		\multicolumn{2}{c}{기능정의}	\\
+		\midrule
+		\bottomrule
+		\end{tabular} 
+		\label{table}
+		\end{table}
+
+		\begin{tabular}{ p{0.2\textwidth} p{0.2\textwidth} p{7cm} }
+		\end{tabular} 
+		
+		
+		\begin{minipage}[t]{0.2\textwidth}
+		\end{minipage}
+		
+		\begin{minipage}[t]{0.2\textwidth}
+			\begin{itemize}[topsep=-1.0em, leftmargin=1.0em, itemsep=-0.5em]
+			\item	
+			\item	
+			\end{itemize}
+		\end{minipage}
+		
+		
+	% ----------------------------- tanbbing
+		\begin{tabbing}
+			\hspace{2cm}\= \hspace{2cm}\= \hspace{2cm}\kill
+		\end{tabbing}
+
+
+	% ----------------------------- include pdf
+		\newpage
+		\includepdf[pages=-, scale=0.9, frame=true, landscape=false]{ss_001.pdf}	
+
+		\newpage
+		\includepdf[pages=-, scale=0.9, frame=true, landscape=false]{ss_001.pdf}	
+
+
+		\includegraphics[scale=0.9,  width=1.0\textwidth]{doc_002.pdf}
+		
+		\url{http://cafe.daum.net/smart-triz}
+		
+		
+	% ----------------------------- include tex
+		
+		% chapter  :  초기투자비법
+		\newpage
+		\include{EconomicAnalysis_001}
+				
+		% chapter  :  회수기간법
+		\include{EconomicAnalysis_002}
+		
+
+		\hspace{2cm} ------------ \\
+		\hspace*{4cm} ------------ \\
+		\hspace*{6cm} ------------ \\
+
+
+
+
+		% --------------------------------- 타이틀 페이지
+		\begin{titlepage}
+		\singlespace
+		\pagestyle{empty}
+		\newcommand{\HRule}{\rule{\textwidth}{0.5mm}}
+		\begin{center}
+		\null
+		\vspace{2cm}
+		\textsc{\LARGE Value Engineering}\\[1.0cm]
+		\HRule\\[-0.4cm]
+		\HRule \\[0.4cm]
+			{ \huge \bfseries 설계의 경제성 등 검토 \\[0.4cm] }
+		\HRule\\[-0.4cm]
+		\HRule \\[1.5cm]
+		
+		% Author and supervisor
+		\noindent
+		\begin{minipage}{1\textwidth}
+			\begin{flushright} \large \emph{Author:}  김대희	\end{flushright}
+		\end{minipage}%
+		\vfill
+		% Bottom of the page
+		{\large \today}
+		
+		\end{center}
+		\cleardoublepage
+		\end{titlepage}																						
+		% --------------------------------- 타이틀 페이지
+
+
+
+
+
+
+
+		% -------------------------------------------------------------------    
+		%  아래 방향으로의 다이아그램 그리기
+		% -------------------------------------------------------------------    
+		
+		    \begin{tikzpicture}
+		    		[node distance=1cm,>=latex',
+				 block/.style = {draw, 	shape=rectangle, align=center},
+				rblock/.style = {draw, 	shape=rectangle, rounded corners=0.5em},
+				tblock/.style = {draw, 	shape=trapezium, 
+										trapezium left angle=60, 
+										trapezium right angle=120, 
+										align=center},
+		             ]
+		             
+			\linespread{1.0}
+			\node [rblock]                      		(start)     	{출발\\ Start};
+		    	\node [block, below=of start]       	(acquire)   	{Node2 \\ Acquire Image};
+		    	\node [block, below=of acquire]   	(rgb2gray)  	{RGB to Gray};
+		    	\node [block, below=of rgb2gray]  (otsu)      	{Localized OTSU\\ Thresholding};
+		    	\node [block, below=of otsu]   	(gchannel) 	{Subtract the\\ Green Channel};
+		    	\node [block, below=of gchannel]  (closing)   	{Morphological\\ Closing};
+		    	\node [block, below=of closing]    (detecting) 	{Sign Detectiing\\ using NN};
+		    	\node [tblock, below=of detecting] (speed)     	{Speed\\ Limit};
+		    	
+			\draw[->] (start) -- (acquire);
+			\draw[->] (acquire) -- (rgb2gray);
+			\draw[->] (rgb2gray) -- (otsu);
+			\draw[->] (otsu) -- (gchannel);
+			\draw[->] (gchannel) -- (closing);
+			\draw[->] (closing) -- (detecting);
+			\draw[->] (detecting) -- (speed);
+			
+			
+    	\end{tikzpicture}
+
+
+
+
+			% Define block styles
+			
+			\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+			    text width=4.5em, text badly centered, node distance=4cm, inner sep=0pt]
+			    
+			\tikzstyle{block} = [	rectangle, draw, fill=blue!20, 
+			    					text width=5em, 
+			    					text centered, 
+			    					rounded corners, 
+			    					minimum height=4em,
+								node distance=3cm
+			    					]
+			    
+			\tikzstyle{line} = [draw, -latex']
+			
+			\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+			    minimum height=2em]
+			    
+			\begin{tikzpicture}[node distance = 2cm, auto]
+			    % Place nodes
+			    \node [block] (init) {initialize model};
+			    \node [cloud, left of=init] (expert) {expert};
+			    \node [cloud, right of=init] (system) {system};
+			    \node [block, below of=init] (identify) {identify candidate models};
+			    \node [block, below of=identify] (evaluate) {evaluate candidate models};
+			    \node [block, left of=evaluate, node distance=3cm] (update) {update model};
+			    \node [decision, below of=evaluate] (decide) {is best candidate better?};
+			    \node [block, below of=decide, node distance=3cm] (stop) {stop};
+			    % Draw edges
+			    \path [line] (init) -- (identify);
+			    \path [line] (identify) -- (evaluate);
+			    \path [line] (evaluate) -- (decide);
+			    \path [line] (decide) -| node [near start] {yes} (update);
+			    \path [line] (update) |- (identify);
+			    \path [line] (decide) -- node {no}(stop);
+			    \path [line,dashed] (expert) -- (init);
+			    \path [line,dashed] (system) -- (init);
+			    \path [line,dashed] (system) |- (evaluate);
+			\end{tikzpicture}
+			
+
+
+
+% ------------------------------------------------------------------------------
+% Maketitle
+% ------------------------------------------------------------------------------
+			\begin{titlepage}
+			\thispagestyle{empty}				% Remove page numbering on this page
+			\definecolor{grey}{rgb}{0.9,0.9,0.9} 
+			\colorbox	{grey}
+						{ \parbox[t]{1.0\linewidth}
+						{
+						\vspace*{1.2cm} 
+						\fontsize{20}{20} \rmfamily \hfill \today 		\\ [0.8cm] \null
+						\fontsize{40}{20} \rmfamily \hfill Value Engineering \\ [0.8cm] \null
+						\fontsize{20}{50} \rmfamily \hfill ver101
+						\vspace*{0.8cm} 
+						} }
+			\vfill
+			% Print the author data as defined above
+			\hfill Kim Dae Hee\\ \null
+			\hfill (주)서영엔지니어링\\ \null
+			\hfill 건설관리팀\\ \null
+			\hfill \url{h01038395609@gmail.com} \\ \null
+			\hfill \rule{0.4\linewidth}{1pt}
+			\end{titlepage}
+			\clearpage
+% ------------------------------------------------------------------------------
+% 
+% ------------------------------------------------------------------------------
+
+				% --------------------------------------------------------------------------------
+				\newpage   
+				\thispagestyle{empty}
+				\begin{center}
+				\null
+				\vspace{6em} % White space at the top of the page
+		
+				\rule{\textwidth}{1.6pt}\\[-1.9em]%\vspace{0.1pt} % Thick horizontal line
+				\rule{\textwidth}{0.4pt}\\[2em]
+		
+				{\Huge 중점 품질 관리 대상 }\\[1.0em]
+		
+				\rule{\textwidth}{0.4pt}\\[-1.7em]
+				\rule{\textwidth}{1.6pt}
+				\end{center}
+				% --------------------------------------------------------------------------------
+
+
+
+\newpage
+% --------------------------------- 환경 정의 : 박스 치고 안의 글자 파란색
+
+			\newenvironment{typing_code}
+			{ 	\setlength{\fboxsep}{12pt}
+				\begin{boxedminipage}[c]{1.0\linewidth}
+				\color{blue}
+			}
+			{ 	\end{boxedminipage} 
+				\color{black}
+			}
+
+
+			\begin{typing_code}
+			code 입력
+			\end{typing_code}
+			
+
+
+
+
+
+
+
+
+% ========================================== chapter ============
+\newpage
+\chapter{공사 착수 단계}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+\end{document}
+
+

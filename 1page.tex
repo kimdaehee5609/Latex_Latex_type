@@ -1,0 +1,511 @@
+%	-------------------------------------------------------------------------------
+% 
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+\documentclass[12pt,a4paper,oneside]{book}
+
+		% --------------------------------- 페이지 스타일 지정
+		\usepackage{geometry}
+		\geometry{top 		=10em}
+		\geometry{bottom		=10em}
+		\geometry{left		=8em}
+		\geometry{right		=8em}
+		\geometry{headheight	=4em} % 머리말 설치 높이
+		\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+		\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+% 		\geometry{showframe}
+	
+%		paperwidth 	= left + width + right (1)
+%		paperheight 	= top + height + bottom (2)
+%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+%		height 		= textheight (+ headheight + headsep + footskip) (4)
+
+
+
+		%	===================================================================
+		%	package
+		%	===================================================================
+%			\usepackage[hangul]{kotex}				% 한글 사용
+			\usepackage{kotex}						% 한글 사용
+			\usepackage[unicode]{hyperref}			% 한굴 하이퍼링크 사용
+			\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+
+			\usepackage{scrextend}					% 
+		
+			\usepackage{enumerate}			%
+			\usepackage{enumitem}			%
+			\usepackage{tablists}			%	수학문제의 보기 등을 표현하는데 사용
+										%	tabenum
+
+
+		% ------------------------------ table 
+			\usepackage{longtable}			%
+			\usepackage{tabularx}			%
+
+			\usepackage{setspace}			%
+			\usepackage{booktabs}			% table
+			\usepackage{color}				%
+			\usepackage{multirow}			%
+			\usepackage{boxedminipage}		% 미니 페이지
+			\usepackage[pdftex]{graphicx}	% 그림 사용
+			\usepackage[final]{pdfpages}	% pdf 사용
+			\usepackage{framed}			% pdf 사용
+			
+			\usepackage{fix-cm}	
+			\usepackage[english]{babel}
+
+		% ------------------------------ TikZ picture
+	
+			\usepackage{tikz}				
+			\usetikzlibrary{shapes,arrows,positioning}
+			\usetikzlibrary{shadows}
+			%\usetikzlibrary{positioning}
+
+			\usepackage{tikzscale}
+			\usepackage{adjustbox}
+
+			
+
+		% --------------------------------- page
+			\usepackage{afterpage}		% 다음페이지가 나온면 어떻게 하라는 명령 정의 패키지
+
+
+			\usepackage{blindtext}
+	
+		% --------------------------------- font 사용
+			\usepackage{pifont}				%
+			\usepackage{textcomp}
+			\usepackage{gensymb}
+			\usepackage{marvosym}
+
+
+
+
+
+
+		% --------------------------------- 페이지 스타일 지정
+
+		\usepackage[Bjornstrup]{fncychap}
+
+		\usepackage{fancyhdr}
+		\pagestyle{fancy}
+		\fancyhead{} % clear all fields
+		\fancyhead[LO]{\tiny \leftmark}
+		\fancyhead[RE]{\tiny \leftmark}
+		\fancyfoot{} % clear all fields
+		\fancyfoot[LE,RO]{\large \thepage}
+		%\fancyfoot[CO,CE]{\empty}
+		\renewcommand{\headrulewidth}{1.0pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	
+	
+	
+		% --------------------------------- 	section 스타일 지정
+	
+		\usepackage{titlesec}
+		
+		\titleformat*{\section}		{\large\bfseries}
+		\titleformat*{\subsection}		{\normalsize\bfseries}
+		\titleformat*{\subsubsection}	{\normalsize\bfseries}
+		\titleformat*{\paragraph}		{\normalsize\bfseries}
+		\titleformat*{\subparagraph}	{\normalsize\bfseries}
+	
+		\renewcommand{\thesection}		{\arabic{section}.}
+		\renewcommand{\thesubsection}	{\thesection\arabic{subsection}.}
+		\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}}
+		
+		\titlespacing*{\section} 		{0pt}{1.0em}{1.0em}
+		\titlespacing*{\subsection}	  	{0ex}{1.0em}{1.0em}
+		\titlespacing*{\subsubsection}	{0ex}{1.0em}{1.0em}
+		\titlespacing*{\paragraph}		{0ex}{1.0em}{1.0em}
+		\titlespacing*{\subparagraph}	{0ex}{1.0em}{1.0em}
+	
+	%	\titlespacing*{\section} 		{0pt}{0.0\baselineskip}{0.0\baselineskip}
+	%	\titlespacing*{\subsection}	  	{0ex}{0.0\baselineskip}{0.0\baselineskip}
+	%	\titlespacing*{\subsubsection}	{6ex}{0.0\baselineskip}{0.0\baselineskip}
+	%	\titlespacing*{\paragraph}		{6pt}{0.0\baselineskip}{0.0\baselineskip}
+	
+
+		% --------------------------------- recommend		섹션별 페이지 상단 여백
+		\newcommand{\SectionMargin}{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSectionMargin}{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSubSectionMargin}{\newpage  \null \vskip 2cm}
+
+
+	
+		% ----------------------------- 장의 목차
+		\usepackage{minitoc}
+		\setcounter{minitocdepth}{1}    	% Show until subsubsections in minitoc
+		\setlength{\mtcindent}{12pt} 		% default 24pt
+	
+	
+		% --------------------------------- 	문서 기본 사항 설정
+		\setcounter{secnumdepth}{3} 		% 문단 번호 깊이
+		\setcounter{tocdepth}{3} 			% 문단 번호 깊이
+		\setlength{\parindent}{0cm} 		% 문서 들여 쓰기를 하지 않는다.
+		
+		
+		% --------------------------------- 	줄간격 설정
+		\doublespace
+%		\onehalfspace
+%		\singlespace
+		
+		
+% 	============================================================================== List global setting
+%		\setlist{itemsep=1.0em}
+	
+% 	============================================================================== enumi setting
+
+%		\renewcommand{\labelenumi}{\arabic{enumi}.} 
+%		\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+%		\renewcommand{\labelenumii}{(\arabic{enumii})}
+%		\renewcommand{\labelenumiii}{\arabic{enumiii})}
+
+
+	%	-------------------------------------------------------------------------------
+	%		Vertical and Horizontal spacing
+	%	-------------------------------------------------------------------------------
+		\setlist[enumerate,1]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate,2]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate,3]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate]	{ itemsep=1.0em, leftmargin=6.0ex, rightmargin=0.0em, labelwidth=0.0em, labelsep=4.0ex }
+
+
+	%	-------------------------------------------------------------------------------
+	%		Label
+	%	-------------------------------------------------------------------------------
+%		\setlist[enumerate,1]{ label=\arabic*., ref=\arabic* }
+%		\setlist[enumerate,1]{ label=\emph{\arabic*.}, ref=\emph{\arabic*} }
+%		\setlist[enumerate,1]{ label=\textbf{\arabic*.}, ref=\textbf{\arabic*} }   	% 1.
+%		\setlist[enumerate,1]{ label=\textbf{\arabic*)}, ref=\textbf{\arabic*)} }		% 1)
+		\setlist[enumerate,1]{ label=\textbf{(\arabic*)}, ref=\textbf{(\arabic*)} }	% (1)
+		\setlist[enumerate,2]{ label=\textbf{\arabic*)}, ref=\textbf{\arabic*)} }		% 1)
+		\setlist[enumerate,3]{ label=\textbf{\arabic*.}, ref=\textbf{\arabic*.} }		% 1.
+
+%		\setlist[enumerate,2]{ label=\emph{\alph*}),ref=\theenumi.\emph{\alph*} }
+%		\setlist[enumerate,3]{ label=\roman*), ref=\theenumii.\roman* }
+
+
+% 	============================================================================== itemi setting
+
+
+	%	-------------------------------------------------------------------------------
+	%		Vertical and Horizontal spacing
+	%	-------------------------------------------------------------------------------
+		\setlist[itemize]{itemsep=0.0em}
+
+
+	%	-------------------------------------------------------------------------------
+	%		Label
+	%	-------------------------------------------------------------------------------
+		\renewcommand{\labelitemi}{$\bullet$}
+		\renewcommand{\labelitemii}{$\cdot$}
+		\renewcommand{\labelitemiii}{$\diamond$}
+		\renewcommand{\labelitemiv}{$\ast$}		
+
+
+
+
+		% --------------------------------- recommend  글자 색깔지정 명령
+		\newcommand{\red}{\color{red}}			% 글자 색깔 지정
+		\newcommand{\blue}{\color{blue}}		% 글자 색깔 지정
+		\newcommand{\black}{\color{black}}		% 글자 색깔 지정
+		\newcommand{\superscript}[1]{${}^{#1}$}
+
+	
+	
+		% --------------------------------- 환경 정의 : 박스 치고 안의 글자 빨간색
+
+			\newenvironment{BoxRedText}
+			{ 	\setlength{\fboxsep}{12pt}
+				\begin{boxedminipage}[c]{1.0\linewidth}
+				\color{red}
+			}
+			{ 	\end{boxedminipage} 
+				\color{black}
+			}
+			
+%		\setmainhangulfont[BoldFont=HY견고딕]{한컴돋움}
+%		\setsanshangulfont{HY견고딕}
+%		\setmonohangulfont{한컴돋움}
+			
+			
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+			\dominitoc
+			
+			\begin{titlepage}
+			\centering
+			\vspace*{2cm} 
+			\rule {1.0\textwidth}{0.2mm}
+			\huge  1 page style
+			\\[-6mm]
+			\rule {1.0\textwidth}{0.2mm}
+			\vfill
+			\Large 2015년 7월 13일
+			\vfill
+			\large 서영엔지니어링 김대희
+			\vspace {2cm}
+			\end{titlepage}
+
+
+
+%			\tableofcontents
+%			\listoffigures
+%			\listoftables
+
+			
+
+
+
+% ================================================= chapter 	====================
+	\newpage
+	\chapter{ 1 page style의 정의}
+
+
+		\newpage
+		\begin{itemize}
+		\item 타원의 선굵기 조정
+		\end{itemize}
+
+	% 	------------------------------------------------------------------- 1 PAGE
+	%	itemize 사용
+	% 	------------------------------------------------------------------- 
+
+		\newpage
+	
+	
+		\thispagestyle{empty}
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=lightgray!20] 
+				{ \textbf{문 서 제 목} };
+		\end{tikzpicture}
+		\end{center}
+	
+		\begin{itemize}[	leftmargin=0.0em, 
+						rightmargin=0.0em, 
+						labelwidth=0.0em, 
+						labelsep=2.0em,
+						itemsep=0.0em ]
+		\item[1.] \textbf{개요}\\
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\item[2.] \textbf{문제점}\\
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\item[3.] 대책	\\
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\item[4.] 결론\\
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\end{itemize}
+	
+	
+	
+	% 	------------------------------------------------------------------- 1 PAGE
+	%	description style=nestline 사용
+	% 	------------------------------------------------------------------- 
+
+		\newpage
+	
+	
+		\thispagestyle{empty}
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=lightgray!20] 
+				{ \textbf{문 서 제 목} };
+		\end{tikzpicture}
+		\end{center}
+	
+		\begin{description}[	style=nextline,
+							leftmargin=3ex, 
+							rightmargin=0.0em, 
+							itemsep=0.0em ]
+		\item[1. 개요]
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\item[2. 문제점 ]
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\item[3. 대책]
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\item[4. 결론]
+	밸브의 축(STEM)과 Disc가 수직으로 개폐되는 방식으로 개폐 시 축(STEM)은 수직운동을 하여 밸브 위쪽으로 Stroke 만큼 돌출된다. 
+	주로 GATE, GLOBE 밸브에 적용된다.
+	
+		\end{description}
+	
+	
+
+	% 	------------------------------------------------------------------- 1 PAGE
+	%	제목 바탕의 색깔
+	% 	------------------------------------------------------------------- 
+
+		\newpage
+	
+	
+		\thispagestyle{empty}
+
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=blue!20] 
+				{ \textbf{문 서 제 목} };
+		\end{tikzpicture}
+		\end{center}
+	
+
+	% 	-------------------------------------
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=green!20] 
+				{ \textbf{문 서 제 목} };
+		\end{tikzpicture}
+		\end{center}
+
+	% 	-------------------------------------
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=cyan!20] 
+				{ \textbf{문 서 제 목 cyan} };
+		\end{tikzpicture}
+		\end{center}
+
+
+	% 	-------------------------------------
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=magenta!20] 
+				{ \textbf{문 서 제 목 magenta } };
+		\end{tikzpicture}
+		\end{center}
+
+	% 	-------------------------------------
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=black!10] 
+				{ \textbf{문 서 제 목 black} };
+		\end{tikzpicture}
+		\end{center}
+
+
+	% 	-------------------------------------
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=lime!20] 
+				{ \textbf{문 서 제 목 lime } };
+		\end{tikzpicture}
+		\end{center}
+
+
+	% 	-------------------------------------
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=purple!20] 
+				{ \textbf{문 서 제 목 purple} };
+		\end{tikzpicture}
+		\end{center}
+
+
+	% 	-------------------------------------
+		\begin{center}
+		\Large
+		\begin{tikzpicture}
+		\node	[	shape=rounded rectangle, draw, 
+					rounded rectangle arc length=90, 
+					minimum width=120mm,
+					minimum height=16mm,
+					fill=teal!20] 
+				{ \textbf{문 서 제 목 teal } };
+		\end{tikzpicture}
+		\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+\end{document}
+
+
